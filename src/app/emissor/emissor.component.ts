@@ -26,7 +26,6 @@ export class EmissorComponent implements OnInit {
     this.listDocs.push(this.documento1);
     this.listDocs.push(this.documento2);
 
-    this.acaoDocumentos.next(null);
     this.acaoDocumentos.next(this.listDocs);
   }
 
