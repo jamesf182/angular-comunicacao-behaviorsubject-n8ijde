@@ -24,5 +24,7 @@ export class VisualizadorComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     if (this.acaoDocumentosSubscription)
       this.acaoDocumentosSubscription.unsubscribe();
+
+    this.acaoDocumentos = null;
   }
 }

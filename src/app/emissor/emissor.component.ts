@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { IAcaoDocumento } from '../app.component';
 import { AppService } from '../app.service';
@@ -8,7 +8,7 @@ import { AppService } from '../app.service';
   templateUrl: './emissor.component.html',
   styleUrls: ['./emissor.component.css'],
 })
-export class EmissorComponent implements OnInit {
+export class EmissorComponent implements OnInit, OnDestroy {
   acaoDocumentos = new BehaviorSubject<IAcaoDocumento[]>([]);
 
   documento1: IAcaoDocumento;
@@ -29,7 +29,7 @@ export class EmissorComponent implements OnInit {
     this.acaoDocumentos.next(this.listDocs);
   }
 
-  enviarViaService(musica: string) {
-    this.appService.alterarMusica(musica);
+  ngOnDestroy() {
+    this.acaoDocumentos = null;
   }
 }
