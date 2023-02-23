@@ -1,0 +1,34 @@
+<div class="row">
+  <div class="col-12">
+    <div class="alert alert-success" role="alert">Comp. Emissor</div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="form-group col-12 mt-1">
+    <label>Informe um nome:</label>
+    <div class="input-group">
+      <input type="text" class="form-control" #viaInput />
+      <span class="input-group-btn ml-1">
+        <button
+          class="btn btn-success"
+          type="button"
+          (click)="enviarViaInput(viaInput.value)"
+        >
+          Next!
+        </button>
+      </span>
+    </div>
+    <small class="form-text text-muted">Enviado via input</small>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12 col-sm-6 border">
+    <app-visualizador
+      class="m-1"
+      [nomeBehaviorSubject]="nomeBehaviorSubjectPai"
+      [acaoDocumentos]="acaoDocumentos"
+    ></app-visualizador>
+  </div>
+</div>
